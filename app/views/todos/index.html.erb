@@ -35,7 +35,9 @@
   <div class="card-body">
     <p class="card-text"><strong>Description:</strong> <%=todo.description %></p>
     <p class="card-text"><strong>Due Date:</strong> <%= todo.due_date %></p>
-    <%= link_to "View Todo",todo_path(todo), {class:"btn btn-primary"}%><%= link_to "Edit Todo", edit_todo_path(todo), {class:"btn btn-info"}%><%= link_to "Delete Todo",todo_path(todo), method: :delete, data: {turbo_confirm: "Are you sure to delete??"}, class:"btn btn-danger" %>
+    <div class="btn-group" role="group" aria-label="Basic example">
+    <%= link_to "View Todo",todo_path(todo), {class:"btn btn-primary"}%><%= link_to "Edit Todo", edit_todo_path(todo), {class:"btn btn-info"}%><%= button_to "Delete Todo",todo_path(todo),data: {turbo_confirm: "Are you sure to delete??"}, method: :delete,  class:"btn btn-danger" %>
+  </div>
   </div>
   <% if todo.priority==1 %>
     <div class="alert alert-danger card-footer text-muted">
