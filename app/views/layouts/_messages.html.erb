@@ -1,0 +1,14 @@
+  <% flash.each do |key,value|%>
+  <%if value==0 %>
+  <div class="alert alert-danger" role="alert">
+    <center><strong>Check the due date ...</strong></center>
+    </div>
+    <% else %>
+    <div class="alert alert-success" role="alert">
+    <center><strong>Record saved succesfully..</strong></center>
+    </div>
+    <%end%>
+
+  <% end %>
+
+
